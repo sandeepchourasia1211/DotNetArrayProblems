@@ -1,4 +1,6 @@
-﻿namespace ArraysProblems
+﻿using ArraysProblems.SumOfEvenNumber;
+
+namespace ArraysProblems
 {
     internal class Program
     {
@@ -44,7 +46,7 @@
 
                 if (option == 1)
                 {
-                    
+                    printSumEven();
                 }
                 else if (option == 2)
                 {
@@ -114,6 +116,26 @@
                 Console.WriteLine();
 
             } while (repeat);
+        }
+
+        private static void printSumEven()
+        {
+            Console.WriteLine("Enter The Size of an Array : ");
+            int num=Convert.ToInt32(Console.ReadLine());
+            int[] arr= new int[num];
+
+            for(int i=0; i<arr.Length; i++)
+            {
+                Console.Write($"Enter number to get Sum of Even Numbers {i + 1}: ");
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine();
+            Console.WriteLine("The Array is "+string.Join(" ", arr));
+
+            EvenSum eS= new EvenSum();
+            int res=eS.sumEven(arr);
+            Console.WriteLine($"The Sum of Even Elements of the Array is {res}");
+            
         }
     }
 }
