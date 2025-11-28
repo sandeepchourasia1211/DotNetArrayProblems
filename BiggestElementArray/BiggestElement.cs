@@ -13,7 +13,7 @@ namespace ArraysProblems.BiggestElementArray
         public int bigElement(int[] arr)
         {
             int big = arr[0];
-            for(int i=0; i<arr.Length; i++)
+            for(int i=1; i<arr.Length; i++)
             {
                 if (arr[i]>big)
                    big = arr[i];               

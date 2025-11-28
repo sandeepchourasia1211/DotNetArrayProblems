@@ -1,4 +1,5 @@
 ﻿using ArraysProblems.BiggestElementArray;
+using ArraysProblems.SmallestElementArray;
 using ArraysProblems.SumOfEvenNumber;
 
 namespace ArraysProblems
@@ -55,7 +56,7 @@ namespace ArraysProblems
                 }
                 else if (option == 3)
                 {
-                    
+                    printSmallest();
                 }
                 else if (option == 4)
                 {
@@ -117,6 +118,26 @@ namespace ArraysProblems
                 Console.WriteLine();
 
             } while (repeat);
+        }
+
+        private static void printSmallest()
+        {
+            Console.WriteLine("Enter the size of an Array:");
+            int size=Convert.ToInt32(Console.ReadLine());
+
+            int[] arr=new int[size];
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                Console.Write($"Enter the Number {i + 1}");
+                arr[i]=Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine();
+            Console.WriteLine($"The Array is : " +string.Join(" ",arr));
+
+            SmallestElement smallestElement = new SmallestElement();
+            int res=smallestElement.findSmallest(arr);
+            Console.WriteLine($"The smallest Number is {res}");
         }
 
         private static void printBiggest()
