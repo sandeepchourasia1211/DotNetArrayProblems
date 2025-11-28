@@ -10,8 +10,17 @@ namespace ArraysProblems.SumOfEvenNumber
     {
         public EvenSum() { }
 
-        public int sumEven(int[] num)
+        public int sumEven(int size)
         {
+            int[] arr = new int[size];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write($"Enter number to get Sum of Even Numbers {i + 1}: ");
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine();
+            Console.WriteLine("The Array is " + string.Join(" ", arr));
             int sum = 0;
             for(int i=0; i<num.Length; i++)
             {

@@ -10,8 +10,17 @@ namespace ArraysProblems.BiggestElementArray
     {
         public BiggestElement() { }
 
-        public int bigElement(int[] arr)
-        {
+        public int bigElement(int size)
+        {           
+            int[] arr = new int[size];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write($"Enter number to Find Biggest Number {i + 1}: ");
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine();
+            Console.WriteLine("The Array is " + string.Join(" ", arr));
             int big = arr[0];
             for(int i=1; i<arr.Length; i++)
             {

@@ -1,6 +1,8 @@
 ﻿using ArraysProblems.BiggestElementArray;
+using ArraysProblems.GetAllTheElements;
 using ArraysProblems.SmallestElementArray;
 using ArraysProblems.SumOfEvenNumber;
+using System.Drawing;
 
 namespace ArraysProblems
 {
@@ -60,7 +62,7 @@ namespace ArraysProblems
                 }
                 else if (option == 4)
                 {
-                   
+                    printElement();
                 }
                 else if (option == 5)
                 {
@@ -120,61 +122,36 @@ namespace ArraysProblems
             } while (repeat);
         }
 
+        private static void printElement()
+        {
+            GetElement getElement=new GetElement();
+            getElement.getEle();
+        }
+
         private static void printSmallest()
         {
-            Console.WriteLine("Enter the size of an Array:");
-            int size=Convert.ToInt32(Console.ReadLine());
-
-            int[] arr=new int[size];
-
-            for(int i = 0; i < arr.Length; i++)
-            {
-                Console.Write($"Enter the Number {i + 1}");
-                arr[i]=Convert.ToInt32(Console.ReadLine());
-            }
-            Console.WriteLine();
-            Console.WriteLine($"The Array is : " +string.Join(" ",arr));
-
             SmallestElement smallestElement = new SmallestElement();
-            int res=smallestElement.findSmallest(arr);
+            int res=smallestElement.findSmallest();
             Console.WriteLine($"The smallest Number is {res}");
         }
 
         private static void printBiggest()
         {
             Console.WriteLine("Enter The Size of an Array : ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[num];
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write($"Enter number to Find Biggest Number {i + 1}: ");
-                arr[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            Console.WriteLine();
-            Console.WriteLine("The Array is " + string.Join(" ", arr));
+            int size = Convert.ToInt32(Console.ReadLine());
 
             BiggestElement biggest = new BiggestElement();
-            int res=biggest.bigElement(arr);
+            int res=biggest.bigElement(size);
             Console.WriteLine($"The Biggest Element is : {res}");
         }
 
         private static void printSumEven()
         {
             Console.WriteLine("Enter The Size of an Array : ");
-            int num=Convert.ToInt32(Console.ReadLine());
-            int[] arr= new int[num];
-
-            for(int i=0; i<arr.Length; i++)
-            {
-                Console.Write($"Enter number to get Sum of Even Numbers {i + 1}: ");
-                arr[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            Console.WriteLine();
-            Console.WriteLine("The Array is "+string.Join(" ", arr));
+            int size = Convert.ToInt32(Console.ReadLine());
 
             EvenSum eS= new EvenSum();
-            int res=eS.sumEven(arr);
+            int res=eS.sumEven(size);
             Console.WriteLine($"The Sum of Even Elements of the Array is {res}");
             
         }
