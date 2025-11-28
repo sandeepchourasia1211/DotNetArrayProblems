@@ -16,7 +16,7 @@ namespace ArraysProblems.BiggestElementArray
 
             for (int i = 0; i < arr.Length; i++)
             {
-                Console.Write($"Enter number to Find Biggest Number {i + 1}: ");
+                Console.Write($"Enter number to Find Biggest Number {i + 1} : ");
                 arr[i] = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine();

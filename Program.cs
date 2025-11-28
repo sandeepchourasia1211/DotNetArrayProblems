@@ -1,5 +1,6 @@
 ﻿using ArraysProblems.BiggestElementArray;
 using ArraysProblems.GetAllTheElements;
+using ArraysProblems.PalindromElementCount;
 using ArraysProblems.SmallestElementArray;
 using ArraysProblems.SumOfEvenNumber;
 using System.Drawing;
@@ -66,7 +67,7 @@ namespace ArraysProblems
                 }
                 else if (option == 5)
                 {
-                    
+                    printPalindrome();
                 }
                 else if (option == 6)
                 {
@@ -120,6 +121,16 @@ namespace ArraysProblems
                 Console.WriteLine();
 
             } while (repeat);
+        }
+
+        private static void printPalindrome()
+        {
+            Console.WriteLine("Enter the size of an Array:");
+            int size = Convert.ToInt32(Console.ReadLine());
+
+            PalindromeCount palindrome= new PalindromeCount();
+            int res=palindrome.getPalindromeCount(size);
+            Console.WriteLine($"Total Palindrome present in the Array is : {res}");
         }
 
         private static void printElement()

@@ -18,7 +18,7 @@ namespace ArraysProblems.SmallestElementArray
 
             for (int i = 0; i < arr.Length; i++)
             {
-                Console.Write($"Enter the Number {i + 1}");
+                Console.Write($"Enter the Number {i + 1} : ");
                 arr[i] = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine();
